@@ -45,9 +45,7 @@ export interface IdlInstruction {
     returns?: IdlType
 }
 
-export type IdlInstructionAccountItem =
-    | IdlInstructionAccounts
-    | IdlInstructionAccount
+export type IdlInstructionAccountItem = IdlInstructionAccount
 
 export interface IdlInstructionAccount {
     name: string

@@ -16,7 +16,7 @@ export const renderAccounts = (
                         >
                             {account.writable ? "mutable" : "immutable"}
                         </span>
-                        <span className="font-mono">{account.name}</span>
+                        <span className={`px-2 py-1 text-xs rounded-md ${account.name ? "bg-cyan-200 dark:bg-cyan-700" : "bg-green-200 dark:bg-cyan-800"}`}>{account.name}</span>
                         {account.signer && (
                             <span className="px-2 py-1 text-xs bg-blue-200 dark:bg-blue-800 rounded-md">
                                 signer

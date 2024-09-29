@@ -14,10 +14,12 @@ import {
   IdlInstructionAccount,
 } from "@/lib/idl-types";
 import Output from "./Output";
+import { Input } from "../ui/input";
+import DynamicInputs from "../ui/DynamicInputs";
 
 export default function Home() {
   return (
-    <div className="flex h-screen overflow-hidden bg-background p-4">
+    <div className="flex h-screen overflow-hidden bg-background p-4 mt-2">
       <aside className="hidden md:flex w-64 border-r">
         <ScrollArea className="flex-grow">
           <Sidebar />
@@ -50,11 +52,11 @@ export default function Home() {
       <aside className="hidden md:flex w-96 border-l">
         <ScrollArea className="flex-grow">
           <Output instructionData={"accounts"} onTest={async () => {
-    // Implement your testing logic here
-    // This should return a promise that resolves with the test result
-    // or rejects with an error
-  }
-}/>
+          // Implement your testing logic here
+            // This should return a promise that resolves with the test result
+            // or rejects with an error
+          }
+        }/>
         </ScrollArea>
       </aside>
     </div>
@@ -121,12 +123,16 @@ function InstructionComponent({
           <TabsList className="mb-4">
             <TabsTrigger value="accounts">Accounts</TabsTrigger>
             <TabsTrigger value="args">Arguments</TabsTrigger>
+            <TabsTrigger value="signer">Signer</TabsTrigger>
           </TabsList>
           <TabsContent value="accounts">
             {renderAccounts(accounts, handleAccountChange)}
           </TabsContent>
           <TabsContent value="args">
             {renderArgs(initial_args, handleArgChange)}
+          </TabsContent>
+          <TabsContent value="signer">
+            <DynamicInputs initialInputs={['First key']} />
           </TabsContent>
         </Tabs>
         <Button className="mt-4" onClick={() => onSubmit()}>

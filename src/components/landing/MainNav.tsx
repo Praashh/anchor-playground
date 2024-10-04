@@ -12,9 +12,9 @@ import { Sidebar } from "../ui/side-bar";
 
 const MainNav: React.FC = () => {
     return (
-        <nav className="shadow-lg dark:shadow-[#100f0f] dark:shadow-md">
+        <nav className="shadow-md dark:shadow-[#100f0f] dark:shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
                         <Link to={"/"} className="dark:text-white font-bold text-xl text-black">
                             Anchor Playground

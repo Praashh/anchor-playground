@@ -1,4 +1,5 @@
 import { idlJson } from "../../../idl/index";
+import { AccordionWrapper } from "./AccordionWrapper";
 import { Button } from "./button";
 import { Separator } from "./separator";
 
@@ -8,49 +9,44 @@ export const Sidebar = ({ className }: any) => (
             <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
                 Instructions
             </h2>
-            <div className="space-y-1">
+            <div className="ml-3">
                 {idlJson.instructions.map((instruction, index) => (
-                    <Button
+                    <div
                         key={index}
-                        variant="ghost"
                         className="w-full justify-start font-normal"
                     >
-                        {instruction.name}
-                    </Button>
+                        <AccordionWrapper title={instruction.name} description={["test1", 'test2', "test3"]}/>
+                    </div>
                 ))}
             </div>
         </div>
-        <Separator />
         <div className="px-3 py-2">
             <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
                 Accounts
             </h2>
-            <div className="space-y-1">
+            <div className="ml-3">
                 {idlJson.accounts.map((account, index) => (
-                    <Button
+                    <div
                         key={index}
-                        variant="ghost"
                         className="w-full justify-start font-normal"
                     >
-                        {account.name}
-                    </Button>
+                        <AccordionWrapper title={account.name} description={["test1", 'test2', "test3"]}/>
+                    </div>
                 ))}
             </div>
         </div>
-        <Separator />
         <div className="px-3 py-2">
             <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
                 Types
             </h2>
-            <div className="space-y-1">
+            <div className="ml-3">
                 {idlJson.types.map((type, index) => (
-                    <Button
+                    <div
                         key={index}
-                        variant="ghost"
                         className="w-full justify-start font-normal"
                     >
-                        {type.name}
-                    </Button>
+                        <AccordionWrapper title={type.name} description={["test1", 'test2', "test3"]}/>
+                    </div>
                 ))}
             </div>
         </div>
